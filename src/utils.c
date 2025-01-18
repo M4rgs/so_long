@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:06 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/17 16:56:25 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/18 09:10:26 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,9 @@ void	move_player(t_game *game, int new_x, int new_y)
 			return ;
 		if (game->map[new_y][new_x] == 'C')
 			game->collectables--;
-		if (game->collectables == 0)
-		{
-			if (game->exit.img)
-				mlx_destroy_image(game->mlx, game->exit.img);
-			game->exit.img = mlx_xpm_file_to_image(game->mlx, "xpm/eo.xpm",
-					&game->exit.width, &game->exit.height);
-		}
 		if (game->map[new_y][new_x] == 'E' && game->collectables == 0)
 		{
-			ft_putstr("YOU WIN\n");
+			ft_printf("YOU WIN\n");
 			close_game(game);
 		}
 		game->map[game->player_y][game->player_x] = '0';
@@ -44,7 +37,10 @@ void	move_player(t_game *game, int new_x, int new_y)
 int	handle_input(int key, t_game *game)
 {
 	if (key == 65307)
+	{
+		ft_printf("You close the game :(\n");
 		close_game(game);
+	}
 	else if ((key == 'w' || key == 65362) && game->player_y > 0)
 		move_player(game, game->player_x, game->player_y - 1);
 	else if ((key == 's' || key == 65364) && game->player_y < game->height - 1)

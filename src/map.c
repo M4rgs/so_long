@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:24 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/17 16:56:19 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/18 09:10:45 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_width(char *line, int *w, int *temp, int fd)
 		*w -= 1;
 	if (*temp && *temp != *w)
 	{
-		ft_putstr("Error\nmap size error\n");
+		ft_printf("Error\nmap size error\n");
 		while (line)
 		{
 			free(line);
@@ -42,7 +42,7 @@ void	map_helper(t_game *game, char *map_file, int h, int w)
 	game->map = (char **)malloc(sizeof(char *) * h);
 	if (!game->map)
 	{
-		ft_putstr("Error\n no memory for map\n");
+		ft_printf("Error\n no memory for map\n");
 		exit(1);
 	}
 	fd = open(map_file, O_RDONLY);
@@ -69,7 +69,7 @@ void	map(t_game *game, char *map_file)
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_putstr("Error\nerror opening file\n");
+		ft_printf("Error\nerror opening file\n");
 		exit(1);
 	}
 	line = get_next_line(fd);

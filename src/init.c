@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:30 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/17 16:56:16 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/18 09:15:08 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,18 @@ void	check_map(t_game *game, char *file)
 {
 	if (!check_characters(game))
 	{
-		ft_putstr("Error\nBoundary not 1 or having intruder character\n");
+		ft_printf("Error\nBoundary not 1 or having intruder character\n");
 		free_map(game, -1, file);
 	}
 	else if (!check_required(game))
 	{
-		ft_putstr("Error\nThe map must contain 1 exit, at least 1 collectible, and 1 starting\
+		ft_printf("Error\nThe map must contain 1 exit, at least 1 collectible, and 1 starting\
 		 position to be valid\n");
 		free_map(game, -1, file);
 	}
 	else if (!check_valid_map(game, file))
 	{
-		ft_putstr("Error\nno valid path\n");
+		ft_printf("Error\nno valid path\n");
 		free_map(game, -1, file);
 	}
 }
@@ -69,7 +69,7 @@ void	init_game(t_game *game, char *file)
 	game->mlx = mlx_init();
 	if (!game->mlx)
 	{
-		ft_putstr("Error\nFailed MLX initialize\n");
+		ft_printf("Error\nFailed MLX initialize\n");
 		free_map(game, -1, file);
 		exit(1);
 	}
@@ -82,7 +82,7 @@ void	init_game(t_game *game, char *file)
 			mlx_destroy_display(game->mlx);
 			free(game->mlx);
 		}
-		ft_putstr("Error\nFailed loading window\n");
+		ft_printf("Error\nFailed loading window\n");
 		free_map(game, -1, file);
 	}
 	init_game_helper(game);
@@ -104,7 +104,7 @@ void	shapes(t_game *game)
 	if (!game->wall.img || !game->collectible.img || !game->exit.img
 		|| !game->player.img || !game->floor.img)
 	{
-		ft_putstr("Error: loading textures\n");
+		ft_printf("Error: loading textures\n");
 		free_resources(game);
 		exit(1);
 	}
@@ -116,9 +116,9 @@ int	main(int argc, char **av)
 
 	if (argc != 2)
 	{
-		ft_putstr("Error\nUsage: ");
-		ft_putstr(av[0]);
-		ft_putstr(" <map_file.ber>\n");
+		ft_printf("Error, No map selected\nUsage: ");
+		ft_printf("%s", av[0]);
+		ft_printf(" <map_file.ber>\n");
 		return (1);
 	}
 	init_game(&game, av[1]);
