@@ -1,7 +1,5 @@
 # So Long - 2D Game
 
-//![Solong](https://github.com/user-attachments/assets/7b9911bd-36e6-4416-889e-b40e4e11bd7a)
-
 A Simple 2D adventure game where you navigate through a maze-like world, collecting coins and searching for the exit. Built with MiniLibX, this project showcases clean game development practices with a focus on effective resource management and engaging gameplay.
 
 ## 🎮 Game Overview
@@ -53,7 +51,8 @@ make        # For mandatory part
 
 Launch with any valid map file:
 ```bash
-./smaps/map.ber ```
+./so_long maps/level1.ber
+```
 
 ## 🕹️ Controls
 
