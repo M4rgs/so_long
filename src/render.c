@@ -6,11 +6,11 @@
 /*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:20 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/17 17:03:25 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/19 19:06:25 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	render_images(t_game *game, int y, int x)
 {

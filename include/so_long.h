@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 10:53:26 by hal-moug          #+#    #+#             */
-/*   Updated: 2025/01/17 17:04:46 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/19 18:48:50 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "../src/ft_printf/ft_printf.h"
 # include "../mlx/mlx.h"
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
 
@@ -29,6 +28,11 @@ typedef struct s_img
 	int		width;
 	int		height;
 }	t_img;
+
+# define UP 65362
+# define DOWN 65364
+# define RIGHT 65363
+# define LEFT 65361
 
 typedef struct s_game
 {
