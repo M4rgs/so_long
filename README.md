@@ -20,11 +20,6 @@ Navigate your character through a grid-based world where every move counts! Your
 - Clean, pixel-perfect graphics
 - Robust error handling and memory management
 
-### Bonus Features
-- Enemy patrols (T) that end the game on contact
-- Enhanced graphics and animations
-- Additional game mechanics
-
 ## 🚀 Getting Started
 
 ### Prerequisites
