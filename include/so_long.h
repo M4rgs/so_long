@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 10:53:26 by hal-moug          #+#    #+#             */
-/*   Updated: 2025/01/19 18:48:50 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/25 06:08:16 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,6 @@ int		check_required(t_game *game);
 int		valid_map_path(t_game *game, int w, int h, char c);
 int		check_valid_map(t_game *game, char *file);
 void	free_map(t_game *game, int x, char *file);
+void	ft_check_map_size(t_game *game);
+void	ft_print_movements_window(t_game *game);
 #endif

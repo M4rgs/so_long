@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:24 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/19 18:11:17 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/25 05:00:19 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,23 @@ void	check_width(char *line, int *w, int *temp, int fd)
 		exit(1);
 	}
 	*temp = *w;
+}
+
+void	ft_check_map_size(t_game *game)
+{
+	int	screen_width;
+	int	screen_height;
+	int	map_width;
+	int	map_height;
+
+	mlx_get_screen_size(game->mlx, &screen_width, &screen_height);
+	map_width = game->width * 32;
+	map_height = game->height * 32;
+	if (map_width > screen_width || map_height > screen_height)
+	{
+		ft_printf("Invalid Map: Map size exceeds screen resolution.");
+		close_game(game);
+	}
 }
 
 void	map_helper(t_game *game, char *map_file, int h, int w)

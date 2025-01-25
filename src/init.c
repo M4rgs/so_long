@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamounir <tamounir@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:50:30 by tamounir          #+#    #+#             */
-/*   Updated: 2025/01/19 17:48:16 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/01/25 05:01:40 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ int	main(int argc, char **av)
 		return (1);
 	}
 	init_game(&game, av[1]);
+	ft_check_map_size(&game);
 	mlx_key_hook(game.win, handle_input, &game);
 	mlx_hook(game.win, 17, 0, close_game, &game);
 	mlx_loop_hook(game.mlx, render_map, &game);
