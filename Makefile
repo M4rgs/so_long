@@ -16,7 +16,7 @@ SRC_BONUS = bonus/so_long_bonus.c bonus/src/checker_bonus.c bonus/src/map_bonus.
 
 MLX = mlx/libmlx.a
 
-MLX_FLAGS = -L. -lXext -L. -lX11
+MLX_FLAGS = -lXext -lX11
 
 AR = ar -rc
 
@@ -30,7 +30,6 @@ all : ${NAME}
 ${NAME} : ${OBJ} 
 	${AR} ${LIB} ${OBJ}
 	make -C mlx/
-	make -C get_next_line/
 	${GCC} ${CFLAGS} ${LIB} ${MLX} ${MLX_FLAGS} -o ${NAME}
 
 bonus : ${NAME_BONUS}
