@@ -8,7 +8,7 @@ LIB_BONUS = so_long_bonus.a
 
 GCC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
 SRC = Mendatory/so_long.c Mendatory/src/checker.c Mendatory/src/map.c Mendatory/src/render.c Mendatory/src/utils.c Mendatory/src/init.c
 
@@ -33,7 +33,7 @@ ${NAME} : ${OBJ}
 	${AR} ${LIB} ${OBJ}
 	make -C mlx/
 	make -C get_next_line/
-	${GCC} ${LIB} ${MLX} ${MLX_FLAGS} ${GNL} -o ${NAME}
+	${GCC} ${CFLAGS} ${LIB} ${MLX} ${MLX_FLAGS} ${GNL} -o ${NAME}
 
 bonus : ${NAME_BONUS}
 
@@ -41,7 +41,7 @@ ${NAME_BONUS} : ${OBJ_BONUS}
 	${AR} ${LIB_BONUS} ${OBJ_BONUS}
 	make -C mlx/
 	make -C get_next_line/
-	${GCC} ${LIB_BONUS} ${MLX} ${MLX_FLAGS} ${GNL} -o ${NAME_BONUS}
+	${GCC} ${CFLAGS} ${LIB_BONUS} ${MLX} ${MLX_FLAGS} ${GNL} -o ${NAME_BONUS}
 
 %.o : %.c Mendatory/so_long.h bonus/so_long_bonus.h
 	@${CC} ${CFLAGS} -c $< -o $@

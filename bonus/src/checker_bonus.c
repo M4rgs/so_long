@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:03:26 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/07 16:05:54 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:14:15 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ static int	check_chara(t_game *game)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = -1;
 	while (++i < game->width)
 		if (game->map[0][i] != '1' || game->map[game->height - 1][i] != '1')
 			return (0);
-	i = 0;
+	i = -1;
 	while (++i < game->height)
 		if (game->map[i][0] != '1' || game->map[i][game->width - 1] != '1')
 			return (0);
-	i = 0;
+	i = -1;
 	while (++i < game->height)
 	{
-		j = 0;
+		j = -1;
 		while (++j < game->width)
 		{
 			if (game->map[i][j] != 'C' && game->map[i][j] != '0' \
@@ -50,10 +50,10 @@ static int	check_require(t_game *game)
 	flag[0] = 0;
 	flag[1] = 0;
 	flag[2] = 0;
-	i = 0;
+	i = -1;
 	while (++i < game->height)
 	{
-		j = 0;
+		j = -1;
 		while (++j < game->width)
 		{
 			if (game->map[i][j] == 'P')

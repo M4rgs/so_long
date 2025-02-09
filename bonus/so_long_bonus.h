@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:57:38 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/07 23:46:25 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 22:03:35 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	render_walls(t_game *game);
 int		move_enemy_with_delay(t_game *game);
 void	ft_putnbr(int nb);
 void	print_moves(t_game *game, int moves);
+void	check_size(int w, int h, char *line, int fd);
 char	*ft_itoa(int n);
 void	change_coll(t_game *game);
 void	change_coll2(t_game *game);

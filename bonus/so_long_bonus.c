@@ -6,12 +6,28 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:42:31 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/07 23:11:48 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:22:54 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
+/*static void	check_size(t_game *game)
+{
+	int	screen_wid;
+	int	screen_hei;
+	int	map_wid;
+	int	map_hei;
+
+	mlx_get_screen_size(game->mlx, &screen_wid, &screen_hei);
+	map_wid = game->width * 50;
+	map_hei = game->height * 50;
+	if (map_wid > screen_wid || map_hei > screen_hei)
+	{
+		ft_putstr("Error\nMap is too big !", 2);
+		exit(1);
+	}
+}*/
 static int	check_ex(char **s)
 {
 	int	i;
