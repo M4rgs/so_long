@@ -6,14 +6,13 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 07:42:19 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/09 22:11:18 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 23:34:11 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../get_next_line/get_next_line.h"
 # include "../mlx/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -51,6 +50,7 @@ typedef struct s_game
 }	t_game;
 
 void	ft_putstr(char *s, int f);
+int		ft_strlen(char *str);
 void	initialz(t_game *game, char *map_file);
 void	map(t_game *game, char *map_file);
 void	check_map(t_game *game, char *map_file);
@@ -61,6 +61,7 @@ void	free_resources(t_game *game);
 int		render_map(t_game *game);
 void	ft_putnbr(int nb);
 void	print_moves(t_game *game, int moves);
+char	*line_grabber(int fd);
 void	ft_putchar(char c);
 
 #endif  

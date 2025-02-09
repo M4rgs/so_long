@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 08:12:51 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/09 22:15:18 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 23:32:46 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	check_size(int w, int h, char *line, int fd)
 		while (line)
 		{
 			free(line);
-			line = get_next_line(fd);
+			line = line_grabber(fd);
 		}
 		ft_putstr("Error\nMap too big !", 2);
 		exit(1);
@@ -53,7 +53,7 @@ static void	check_widht(int *w, int *h, char *line, int fd)
 		while (line)
 		{
 			free(line);
-			line = get_next_line(fd);
+			line = line_grabber(fd);
 		}
 		close(fd);
 		exit(1);
@@ -79,7 +79,7 @@ static void	map_helper(t_game *game, char *map_file, int height, int width)
 	fd = open(map_file, O_RDONLY);
 	while (i < height)
 	{
-		game->map[i] = get_next_line(fd);
+		game->map[i] = line_grabber(fd);
 		game->map[i][width] = '\0';
 		i++;
 	}
@@ -101,13 +101,13 @@ void	map(t_game *game, char *map_file)
 		ft_putstr("Error\ncannot read the map file !\n", 2);
 		exit (1);
 	}
-	line = get_next_line(fd);
+	line = line_grabber(fd);
 	while (line)
 	{
 		check_widht(&width, &height, line, fd);
 		height++;
 		free(line);
-		line = get_next_line(fd);
+		line = line_grabber(fd);
 	}
 	close(fd);
 	map_helper(game, map_file, height, width);
