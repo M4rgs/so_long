@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 08:06:39 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/09 22:06:47 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 22:15:23 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,18 +96,4 @@ void	free_resources(t_game *game)
 		free(game->map);
 	}
 	free_textures(game);
-}
-
-void	check_size(int w, int h, char *line, int fd)
-{
-	if (w > 1000 || h > 1000)
-	{
-		while (line)
-		{
-			free(line);
-			line = get_next_line(fd);
-		}
-		ft_putstr("Error\nMap too big !", 2);
-		exit(1);
-	}
 }

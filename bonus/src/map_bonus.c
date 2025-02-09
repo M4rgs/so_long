@@ -6,7 +6,7 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 08:12:51 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/09 22:08:21 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/09 22:15:18 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ static int	ft_strchr(char *s, char c)
 		i++;
 	}
 	return (0);
+}
+
+static void	check_size(int w, int h, char *line, int fd)
+{
+	if (w > 1000 || h > 1000)
+	{
+		while (line)
+		{
+			free(line);
+			line = get_next_line(fd);
+		}
+		ft_putstr("Error\nMap too big !", 2);
+		exit(1);
+	}
 }
 
 static void	check_widht(int *w, int *h, char *line, int fd)
