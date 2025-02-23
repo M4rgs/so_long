@@ -6,11 +6,11 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:42:31 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/09 23:50:36 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/11 05:06:21 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../so_long_bonus.h"
 
 static int	check_ex(char **s)
 {

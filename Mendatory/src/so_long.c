@@ -6,11 +6,11 @@
 /*   By: tamounir <tamounir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:42:31 by tamounir          #+#    #+#             */
-/*   Updated: 2025/02/07 14:04:39 by tamounir         ###   ########.fr       */
+/*   Updated: 2025/02/11 05:06:51 by tamounir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	ft_putchar(char c)
 {
